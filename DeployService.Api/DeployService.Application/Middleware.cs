@@ -1,0 +1,15 @@
+using DeployService.Application.Services;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace DeployService.Application;
+
+public static class Middleware
+{
+    public static IServiceCollection AddApplication(this IServiceCollection services)
+    {
+        services.AddScoped<AuthService>();
+        services.AddScoped<UserService>();
+        return services;
+    }
+ 
+}
